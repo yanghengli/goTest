@@ -10,7 +10,7 @@ metadata:
 spec:
   containers:
   - name: kaniko
-    image: uhub.service.ucloud.cn/henry/executor:debug
+    image: uhub.service.ucloud.cn/mmu_bj/executor:debug
     command:
     - /busybox/cat
     tty: true
@@ -38,7 +38,7 @@ spec:
         stage('Build Image')
             container('kaniko') {
                 sh """
-                /kaniko/executor -c `pwd`/ -f `pwd`/docker/Dockerfile -d uhub.service.ucloud.cn/henry/hello:v1.0
+                /kaniko/executor -c `pwd`/ -f `pwd`/docker/Dockerfile -d uhub.service.ucloud.cn/mmu_bj/hello:v1.0
                 """
             }
        stage('Deploy') {
